@@ -1,0 +1,99 @@
+โครงสร้างสถาปัตยกรรมระบบและฟังก์ชันการทำงาน (Functional Requirements) สำหรับแพลตฟอร์ม Web & Mobile App เพื่อการดูแลผู้ป่วย แบ่งออกเป็น 3 โมดูลหลัก ดังนี้
+
+1. ระบบบันทึกและติดตามสุขภาพผู้ป่วย (Patient Health & Nursing Log)
+
+บันทึกกิจวัตรและสัญญาณชีพ (Daily Log & Vitals): บันทึกการรับประทานอาหาร (ปริมาณ/ประเภท), การขับถ่าย, การนอนหลับ, ค่ายาที่ได้รับ รวมถึงสัญญาณชีพ เช่น ความดันโลหิต ชีพจร ระดับน้ำตาล และอุณหภูมิ
+
+การประเมินแนวโน้มสุขภาพ (Health Trend & Comparison): ระบบเปรียบเทียบผลการตรวจและอาการรอบล่าสุดกับรอบก่อนหน้า ประมวลผลออกมาเป็น กราฟแนวโน้ม (Trend Charts) และสัญลักษณ์สี (เขียว-คงที่/ดีขึ้น, แดง-ต้องเฝ้าระวัง)
+
+บันทึกแผนการรักษาและข้อควรระวัง (Care Plan & Precautions): สรุปคำแนะนำจากแพทย์ แนวทางการปฏิบัติตัว กิจกรรมที่ห้ามทำ และระบบแจ้งเตือนข้อควรระวังเฉพาะบุคคล (เช่น ผู้ป่วยเสี่ยงพลัดตกหกล้ม, ผู้ป่วยแพ้อาหาร/ยา) พร้อมไอคอนภาพอินโฟกราฟิกเข้าใจง่าย
+
+2. ระบบจัดการบริการพาผู้ป่วยไปพบแพทย์ (Medical Escort & Appointment Management)
+
+ฐานข้อมูลและตารางงานพนักงานพาไปหาหมอ (Escort Staff & Availability): ปฏิทินแสดงสถานะความว่างแบบเรียลไทม์ และระบบจับคู่งานตามช่วงเวลา
+
+แฟ้มข้อมูลสรุปก่อนพบแพทย์ (Pre-Appointment Briefing): เมื่อถึงวันนัดหมาย ระบบจะสร้างเอกสารสรุปอัตโนมัติบนแอปพลิเคชัน ประกอบด้วย:
+
+วัน เวลา แผนก และชื่อแพทย์ที่นัดหมาย
+
+ผลการตรวจ อาการ และแผนการรักษารอบก่อนหน้า
+
+รายการคำถามที่ญาติหรือผู้ดูแลฝากปรึกษาแพทย์ (Doctor Questions Checklist)
+
+บันทึกผลหลังการพบแพทย์ (Post-Visit Summary): อัปโหลดรูปภาพใบเสร็จ ใบนัดครั้งถัดไป และสรุปคำสั่งการรักษาใหม่เข้าระบบทันที
+
+3. ระบบบริหารจัดการพนักงานดูแลผู้ป่วยที่บ้าน (Home Caregiver Management)
+
+โปรไฟล์ผู้ดูแล (Caregiver Profile): รวบรวมข้อมูลสำคัญ เช่น วุฒิการศึกษา/ใบเซอร์เฉพาะทาง (เช่น การดูแลผู้ป่วยติดเตียง, การฟอกไต), ทักษะเด่น, ประวัติการทำงาน, รูปถ่าย และวันที่เริ่มงาน
+
+การจัดการค่าจ้างและเงื่อนไขการทำงาน (Wage & Contract): บันทึกอัตราค่าจ้าง (รายชั่วโมง/รายวัน/รายเดือน) และประเภทการรับงาน (พักค้างคืน หรือ ไป-กลับ)
+
+ระบบเช็กอินและรายงานตัว (Check-in & Service Log): บันทึกพิกัด GPS เวลาเริ่มงาน-เลิกงาน พร้อมส่งสรุปรายงานการดูแลประจำวันให้ญาติผู้ป่วยตรวจสอบผ่านแอป
+
+เทคโนโลยีที่แนะนำสำหรับการพัฒนา
+
+Mobile App: Flutter หรือ React Native (รองรับทั้ง iOS และ Android จากโค้ดชุดเดียว)
+
+Web Admin / Dashboard: React.js หรือ Next.js ร่วมกับ Tailwind CSS สำหรับเจ้าหน้าที่และผู้บริหาร
+
+Backend & Database: Node.js (NestJS) หรือ Python (FastAPI) คู่กับ PostgreSQL สำหรับเก็บข้อมูลความสัมพันธ์ และ Firebase Cloud Messaging สำหรับการแจ้งเตือน Real-time
+
+
+
+
+
+
+
+
+
+**System Architecture and Functional Requirements for a Web & Mobile App Patient Care Platform**
+
+The platform is divided into three main modules as follows:
+
+### 1. Patient Health & Nursing Log
+
+**Daily Log & Vitals:**
+Record patients’ daily activities, including food intake (quantity/type), bowel movements, sleep patterns, medications received, and vital signs such as blood pressure, pulse rate, blood glucose levels, and body temperature.
+
+**Health Trend & Comparison:**
+The system compares the latest examination results and symptoms with previous records and presents the information through **trend charts** and **color-coded indicators** (green = stable/improving, red = requires monitoring).
+
+**Care Plan & Precautions:**
+Summarize doctors’ recommendations, care instructions, restricted activities, and personalized precaution alerts. Examples include patients at risk of falls or patients with food/drug allergies. Easy-to-understand infographic icons should be included for better communication.
+
+### 2. Medical Escort & Appointment Management
+
+**Escort Staff & Availability:**
+Maintain a database and work schedule for medical escort staff. Provide a real-time calendar showing staff availability and a scheduling system that matches assignments based on the required time slots.
+
+**Pre-Appointment Briefing:**
+On the day of an appointment, the system automatically generates a summary document within the application, including:
+
+* Appointment date, time, department, and doctor’s name
+* Previous examination results, symptoms, and treatment plan
+* A **Doctor Questions Checklist** containing questions submitted by family members or caregivers for the doctor
+
+**Post-Visit Summary:**
+Allow staff to immediately upload photos of receipts, the next appointment slip, and updated treatment instructions into the system after the medical visit.
+
+### 3. Home Caregiver Management
+
+**Caregiver Profile:**
+Maintain key caregiver information, including educational qualifications and specialized certifications (e.g., bedridden patient care, dialysis care), key skills, employment history, profile photo, and employment start date.
+
+**Wage & Contract:**
+Record compensation rates (hourly/daily/monthly) and employment arrangements, such as live-in or live-out care.
+
+**Check-in & Service Log:**
+Record GPS location and check-in/check-out times. Caregivers can submit daily care reports, which family members can review through the application.
+
+### Recommended Technology Stack
+
+**Mobile App:**
+Flutter or React Native to support both iOS and Android using a single codebase.
+
+**Web Admin / Dashboard:**
+React.js or Next.js with Tailwind CSS for staff and management users.
+
+**Backend & Database:**
+Node.js (NestJS) or Python (FastAPI), combined with PostgreSQL for relational data storage, and Firebase Cloud Messaging for real-time notifications.
