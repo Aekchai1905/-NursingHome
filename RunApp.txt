@@ -19,3 +19,9 @@ cd d:\Aekchai\Antigravity\NursingHome
 bash
 npm run dev
 เปิดเบราว์เซอร์ไปที่ http://localhost:5173/ ใช้งานได้ทันทีครับ
+
+
+
+
+URL Host:	https://vercel.com/aekchai1
+URL Website : 	https://nursing-home-eta.vercel.app/

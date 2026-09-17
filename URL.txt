@@ -3,3 +3,13 @@ https://www.pinterest.com				Search template and theme for website
 https://lovable.dev					create website or application
 https://www.firecrawl.dev/onboarding			create company logo 
 https://21st.dev					CSV Style
+https://vercel.com/aekchai1				Create Public Host
+https://modal.com/					Trigger on website
+https://github.com/rmyndharis/antigravity-skills/tree/main	skill for antigravity
+
+
+
+
+
+
+C:\Users\Aekchai\.gemini\config\skills\gemini-skill-creator	skill master
